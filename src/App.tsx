@@ -1,10 +1,16 @@
 import './App.css'
+import './components/UserIntraction'
+import UserInteraction from './components/UserIntraction'
 
 function App() {
   
 
   return (
-    <h1> Test </h1>
+    <>
+    <div>
+      <UserInteraction/>
+    </div>
+    </>
   )
 }
 
