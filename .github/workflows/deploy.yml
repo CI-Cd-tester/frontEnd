@@ -14,9 +14,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      # Set up Docker Buildx (for multi-stage builds)
-      - name: Set up Docker Buildx
-        uses: docker/setup-buildx-action@v2
 
       # Cache npm dependencies
       - name: Cache npm dependencies
@@ -26,14 +23,6 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-      # Build the Docker image
-      - name: Build Docker image
-        run: docker build -t react-app .
-
-      # Run the Docker container
-      - name: Run Docker container
-        run: docker run -d -p 8080:80 react-app
 
   deploy:
     needs: build
