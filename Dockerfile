@@ -20,7 +20,7 @@ RUN npm run build
 FROM nginx:alpine
 
 # 8. Kopiera byggfilerna till Nginx webroot
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
 
 # 9. Exponera port 80
 EXPOSE 80
