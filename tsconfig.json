@@ -3,7 +3,16 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" },
-    {"exclude":["src/**/*.cy.tsx"]}
+    {"exclude":[
+      "src/**/*.cy.tsx",
+      "node_modles",
+      "**/*.test.tsx",
+      "**/*.test.ts",
+      "**/*.cy.tsx",
+      "**/*.cy.ts",
+
+    
+    ]}
 
   ]
 }
