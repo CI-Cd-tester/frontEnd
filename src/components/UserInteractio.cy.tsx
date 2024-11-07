@@ -1,5 +1,4 @@
 import "./UserIntraction"
-import React from "react"
 import UserInteraction from "./UserIntraction"
 
 describe("<UserInteration>", () =>{
