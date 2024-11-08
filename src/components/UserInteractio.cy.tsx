@@ -52,7 +52,7 @@ describe("Ui components", ()=>{
 
 describe("Functions test", ()=>{
     it("should display the encryptes text after encryption process", ()=>{
-
+    
         cy.get('input[type="password"]').type("testpassword");
         cy.get('input[type="text"]').type("test message");
         cy.get("button").contains("Encrypt").click();
