@@ -5,7 +5,7 @@
     { "path": "./tsconfig.node.json" },
     {"exclude":[
       "src/**/*.cy.tsx",
-      "node_modles",
+      "node_modules",
       "**/*.test.tsx",
       "**/*.test.ts",
       "**/*.cy.tsx",
