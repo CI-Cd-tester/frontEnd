@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # Check out the repository code
+     
       - name: Checkout code
         uses: actions/checkout@v3
 
-
-      # Cache npm dependencies
+     
       - name: Cache npm dependencies
         uses: actions/cache@v3
         with:
@@ -23,36 +22,21 @@ jobs:
           key: ${{ runner.os }}-node-${{ hashFiles('package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-node-
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
-
-      # Set up Node.js for deployment
+      
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
-
-      # Install dependencies
+      
+      
       - name: Install dependencies
         run: npm install
 
-      # Build the React app
-      - name: Build the React app
+      - name: Deploy to GitHub Pages
         run: npm run build
 
-      # Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
-        run: npm run deploy
-
-      # Configure GitHub Pages
       - name: Configure GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build
+          publish_dir: ./dist
