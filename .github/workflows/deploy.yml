@@ -27,14 +27,6 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-node-
 
-      # Build the Docker image
-      - name: Build Docker image
-        run: docker build -t react-app .
-
-      # Run the Docker container
-      - name: Run Docker container
-        run: docker run -d -p 8080:80 react-app
-
   deploy:
     needs: build
     runs-on: ubuntu-latest
