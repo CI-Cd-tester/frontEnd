@@ -1,15 +1,16 @@
-import "./UserIntraction"
-import Cypress from 'cypress'
-import UserInteraction from "./UserIntraction"
+import "./UserIntraction";
+import UserInteraction from "./UserIntraction";
 
 describe("<UserInteration>", () =>{
 
     beforeEach(() => {
+       // @ts-ignore
         cy.mount(<UserInteraction/>);
     });
 
 
 it("renders component", ()=>{
+    // @ts-ignore
     cy.mount(<UserInteraction/>)
 });
 
