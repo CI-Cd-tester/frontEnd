@@ -1,4 +1,5 @@
 import "./UserIntraction"
+import Cypress from 'cypress'
 import UserInteraction from "./UserIntraction"
 
 describe("<UserInteration>", () =>{
